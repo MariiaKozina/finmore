@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 test.describe('check login', () => {//test suit
     
     test.beforeEach(async({page})=>{
@@ -40,17 +40,17 @@ test.describe('check login', () => {//test suit
         */
 
         //email logo test
-        const loginEmailIcon = page.locator('svg.lucide-mail');//шукає елемент на сторінці по класу
-        await expect(loginEmailIcon).toBeVisible();//відображаєтся на сторінці
-        await expect(loginEmailIcon).toHaveAttribute('width','24'); //перевіряємо розмір
-        await expect(loginEmailIcon).toHaveAttribute('height','24');
+       // const loginEmailIcon = page.locator('svg.lucide-mail');//шукає елемент на сторінці по класу
+        //await expect(loginEmailIcon).toBeVisible();//відображаєтся на сторінці
+       // await expect(loginEmailIcon).toHaveAttribute('width','24'); //перевіряємо розмір
+       // await expect(loginEmailIcon).toHaveAttribute('height','24');
        
         //login-email-input positive
-        const inputEmail = page.getByTestId('login-email-input');
-        await expect(vhidTest).toBeVisible();
-        await expect(vhidTest).toHaveAttribute('placeholder','your@email.com');//placeholder 
-        await inputEmail.fill('admin@demo.com');
-        await expect(inputEmail).toHaveValue('admin@demo.com');//попередні данні ввелись
+        //const inputEmail = page.getByTestId('login-email-input');
+        ///await expect(vhidTest).toBeVisible();
+        ///await expect(vhidTest).toHaveAttribute('placeholder','your@email.com');//placeholder 
+        //await inputEmail.fill('admin@demo.com');
+        //await expect(inputEmail).toHaveValue('admin@demo.com');//попередні данні ввелись
         
         /*
         //login-email-input negative
@@ -85,6 +85,6 @@ test.describe('check login', () => {//test suit
         await expect(page).toHaveURL('/'); // перевірка чи нема редіректа
 
         */
-    })
-}
-)
+    //})
+//}
+//) 

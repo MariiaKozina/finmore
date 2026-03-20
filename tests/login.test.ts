@@ -1,10 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 import { LoginPage } from '../pages/login.page';
+//import { LOGIN_DATA } from './Data/loginData';
  
 test.describe('Login page', () => {
     let loginPage:LoginPage; //глобальна
  
+    //------змінни всередині тесту
+    const LOGIN_DATA = {
+  validEmail: 'test@example.com',
+  validPassword: '123456',
+  loginTitleText: 'Вхід до системи',
+  emailPlaceholder: 'your@email.com',
+  iconSize: '24',
+};
+// ----------
+
   test.beforeEach(async ({ page }) => {
 
     loginPage = new LoginPage(page);
@@ -35,9 +46,9 @@ test.describe('Login page', () => {
  
     await loginPage.login(
 
-      'admin@demo.com',
+      LOGIN_DATA.validEmail,
 
-      'admin123'
+      LOGIN_DATA.validPassword
 
     );
  
