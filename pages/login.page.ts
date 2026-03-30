@@ -1,7 +1,10 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { GlobalMethods } from '../utils/globalMethods';
  
 export class LoginPage {
  
+  readonly globalMethods: GlobalMethods;
+
   readonly page: Page;
  
   readonly loginIcon: Locator;
@@ -17,6 +20,8 @@ export class LoginPage {
   readonly submitButton: Locator;
  
   constructor(page: Page) {
+
+    this.globalMethods = new GlobalMethods(page);
 
     this.page = page;
  
@@ -90,9 +95,10 @@ export class LoginPage {
  
   async clickSubmit() {
 
-    await expect(this.submitButton).toBeEnabled();
+    await this.globalMethods.click(this.submitButton,'кнопка Submit');
+    //await expect(this.submitButton).toBeEnabled();
 
-    await this.submitButton.click();
+    //await this.submitButton.click();
 
   }
  
