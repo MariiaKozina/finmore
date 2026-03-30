@@ -37,11 +37,6 @@ export class RegistrationPage {
     this.submitButton = page.getByTestId('register-submit-button');
   }
 
-  async open() {
-    await this.page.goto('/');
-    await this.switchToRegister();
-  }
-
   async switchToRegister() {
     await expect(this.switchToRegisterButton).toBeVisible();
     await expect(this.switchToRegisterButton).toBeEnabled();
